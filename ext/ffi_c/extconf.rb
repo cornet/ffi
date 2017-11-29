@@ -26,6 +26,7 @@ $defs << "-DRUBY_1_9" if RUBY_VERSION >= "1.9.0"
 create_header
 
 $CFLAGS << " -mwin32 " if Config::CONFIG['host_os'] =~ /cygwin/
+$CFLAGS << " -std=c99" if RbConfig::CONFIG['host_os'] == /solaris2\.10/
 #$CFLAGS << " -Werror -Wunused -Wformat -Wimplicit -Wreturn-type "
 
 create_makefile("ffi_c")
